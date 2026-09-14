@@ -1,10 +1,19 @@
 # Installation
 
-Please refer to the Flatpak installation instructions for your distribution over at [flathub.org](https://flathub.org/setup/).
+Please refer to the Flatpak installation instructions for your
+distribution over at [flathub.org](https://flathub.org/setup/).
 
-These instructions will also show you how to install the Flathub repository.
+These instructions will also show you how to install the Flathub
+repository.
 
 ## Flathub Beta repository
+
+:::warning
+The Flathub Beta repository primarily serves as a testing ground for
+alpha and beta versions of applications. As a result, it may include
+unstable, experimental or stale versions of applications. Please
+proceed with caution when using using this.
+:::
 
 Apart from the primary stable repository above, Flathub also has beta
 repository that applications sometime use to serve secondary versions.
@@ -30,7 +39,9 @@ flatpak run --branch=<beta|stable> <app-id>
 
 ## Subsets
 
-In the case, that you only want a specific subset of apps, you can use the `--subset` option when adding the Flathub remote. You will only be able to install apps from the subset you specified.
+In the case, that you only want a specific subset of apps, you can use
+the `--subset` option when adding the Flathub remote. You will only be
+able to install apps from the subset you specified.
 
 Only allow `verified` apps, if adding a new remote:
 

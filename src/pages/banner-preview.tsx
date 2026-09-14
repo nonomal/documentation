@@ -100,8 +100,7 @@ function BannerPreviewPage() {
               id="name"
               className="rounded-md dark:bg-[#1f1f1f]"
               name="name"
-              placeholder="Name"
-              defaultValue={name}
+              placeholder="Enter name"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -115,8 +114,7 @@ function BannerPreviewPage() {
               id="summary"
               className="rounded-md dark:bg-[#1f1f1f]"
               name="summary"
-              placeholder="Summary"
-              defaultValue={summary}
+              placeholder="Enter summary"
               onChange={(e) => setSummary(e.target.value)}
             />
           </div>
@@ -144,7 +142,7 @@ function BannerPreviewPage() {
                   type="file"
                   id="screenshot"
                   name="screenshot"
-                  accept="image/png"
+                  accept="image/png, image/jpeg, image/webp"
                   onChange={(e) => handleScreenshotChange(e)}
                 />
               </div>

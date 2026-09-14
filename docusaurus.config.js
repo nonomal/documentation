@@ -19,8 +19,8 @@ const config = {
   baseUrl: "/",
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
   onBrokenAnchors: "throw",
+  trailingSlash: false,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -28,6 +28,16 @@ const config = {
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
+  },
+
+  markdown: {
+    format: "detect",
+    mermaid: true,
+    emoji: true,
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+      onBrokenMarkdownImages: "throw",
+    },
   },
 
   presets: [
@@ -44,7 +54,10 @@ const config = {
         blog: {
           feedOptions: {
             type: "all",
+            xslt: true,
           },
+          onInlineAuthors: "throw",
+          onUntruncatedBlogPosts: "throw",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -65,7 +78,7 @@ const config = {
   plugins: [
     tailwindPlugin,
     [
-      require.resolve("docusaurus-plugin-search-local"),
+      require.resolve("@easyops-cn/docusaurus-search-local"),
       {
         hashed: true,
       },
@@ -93,6 +106,26 @@ const config = {
           {
             from: "/docs/for-app-authors/appdata-guidelines",
             to: "/docs/for-app-authors/metainfo-guidelines",
+          },
+          {
+            from: "/linter",
+            to: "/docs/for-app-authors/linter",
+          },
+          {
+            from: "/publish",
+            to: "/docs/for-app-authors/submission",
+          },
+          {
+            from: "/docs/for-app-authors/external-data-checker",
+            to: "/docs/for-app-authors/maintenance",
+          },
+          {
+            from: "/docs/for-app-authors/updates",
+            to: "/docs/for-app-authors/maintenance",
+          },
+          {
+            from: "/contribute",
+            to: "/docs/for-team-members/becoming-a-team-member",
           },
         ],
       },
@@ -127,6 +160,11 @@ const config = {
             label: "Docs",
           },
           { to: "/blog", label: "Blog", position: "left" },
+          {
+            href: "https://flathub.org",
+            label: "Store",
+            position: "right",
+          },
           {
             href: "https://github.com/flathub/documentation",
             label: "GitHub",
@@ -168,6 +206,7 @@ const config = {
               {
                 label: "Mastodon",
                 href: "https://floss.social/@flathub",
+                rel: "noreferrer me",
               },
             ],
           },
